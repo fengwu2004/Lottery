@@ -7,21 +7,33 @@
 //
 
 #import "ViewController.h"
+#import "BuyListVCTL.h"
 
 @interface ViewController ()
+
+@property (nonatomic, retain) IBOutlet UIButton *ibBtnShuangSeQiu;//双色球
+@property (nonatomic, retain) IBOutlet UIButton *ibBtnDaLeTou;//大乐透
 
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
+	
 	[super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning {
-	[super didReceiveMemoryWarning];
-	// Dispose of any resources that can be recreated.
+- (IBAction)onShuangeSeQiu:(id)sender {
+	
+	BuyListVCTL *vctl = [[BuyListVCTL alloc] init];
+	
+	[self.navigationController pushViewController:vctl animated:YES];
 }
+
+- (IBAction)OnDaLeTou:(id)sender {
+	
+	
+}
+
 
 @end
