@@ -35,7 +35,7 @@
 	
 	[_ibRedCollection registerNib:nib forCellWithReuseIdentifier:@"BollCollectionCell"];
 	
-	_ibRedCollection.scrollsToTop = YES;
+	self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -45,7 +45,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 	
-	return 33;
+	return 15;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {

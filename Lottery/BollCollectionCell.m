@@ -18,7 +18,9 @@
 
 - (void)awakeFromNib {
 	
-	self.layer.cornerRadius = 15 ;
+	[super awakeFromNib];
+	
+	self.layer.cornerRadius = 15;
 	
 	self.clipsToBounds = YES;
 	
