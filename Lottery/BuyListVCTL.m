@@ -10,6 +10,8 @@
 #import "BollData.h"
 #import "BollCell.h"
 #import "AwardChecking.h"
+#import "AddBollVCTL.h"
+
 
 typedef NS_ENUM(NSInteger, dataType){
  
@@ -63,7 +65,18 @@ typedef NS_ENUM(NSInteger, dataType){
 	
   [super viewDidLoad];
 	
+	UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"addnewitem"] style:UIBarButtonItemStylePlain target:self action:@selector(onNewBolls)];
+
+	self.navigationItem.rightBarButtonItem = rightItem;
+	
 	[self test];
+}
+
+- (void)onNewBolls {
+	
+	AddBollVCTL *vctl = [[AddBollVCTL alloc] init];
+	
+	[self.navigationController pushViewController:vctl animated:YES];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

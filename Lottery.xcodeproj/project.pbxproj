@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		CE1CCF571C7184C1003502C7 /* AwardChecking.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1CCF561C7184C1003502C7 /* AwardChecking.m */; };
+		CE1CCF5B1C71AABC003502C7 /* AddBollVCTL.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1CCF591C71AABC003502C7 /* AddBollVCTL.m */; };
+		CE1CCF5C1C71AABC003502C7 /* AddBollVCTL.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1CCF5A1C71AABC003502C7 /* AddBollVCTL.xib */; };
+		CE1CCF601C71CEFF003502C7 /* BollCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1CCF5E1C71CEFF003502C7 /* BollCollectionCell.m */; };
+		CE1CCF611C71CEFF003502C7 /* BollCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1CCF5F1C71CEFF003502C7 /* BollCollectionCell.xib */; };
 		CE4996861C64684800CBBF8F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4996851C64684800CBBF8F /* main.m */; };
 		CE4996891C64684800CBBF8F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4996881C64684800CBBF8F /* AppDelegate.m */; };
 		CE49968C1C64684800CBBF8F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE49968B1C64684800CBBF8F /* ViewController.m */; };
@@ -26,6 +30,12 @@
 /* Begin PBXFileReference section */
 		CE1CCF551C7184C1003502C7 /* AwardChecking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwardChecking.h; sourceTree = "<group>"; };
 		CE1CCF561C7184C1003502C7 /* AwardChecking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwardChecking.m; sourceTree = "<group>"; };
+		CE1CCF581C71AABC003502C7 /* AddBollVCTL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBollVCTL.h; sourceTree = "<group>"; };
+		CE1CCF591C71AABC003502C7 /* AddBollVCTL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBollVCTL.m; sourceTree = "<group>"; };
+		CE1CCF5A1C71AABC003502C7 /* AddBollVCTL.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddBollVCTL.xib; sourceTree = "<group>"; };
+		CE1CCF5D1C71CEFF003502C7 /* BollCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BollCollectionCell.h; sourceTree = "<group>"; };
+		CE1CCF5E1C71CEFF003502C7 /* BollCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BollCollectionCell.m; sourceTree = "<group>"; };
+		CE1CCF5F1C71CEFF003502C7 /* BollCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BollCollectionCell.xib; sourceTree = "<group>"; };
 		CE4996811C64684800CBBF8F /* Lottery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lottery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4996851C64684800CBBF8F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CE4996871C64684800CBBF8F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -101,6 +111,12 @@
 				CE4996AA1C64701B00CBBF8F /* BollCell.xib */,
 				CE1CCF551C7184C1003502C7 /* AwardChecking.h */,
 				CE1CCF561C7184C1003502C7 /* AwardChecking.m */,
+				CE1CCF581C71AABC003502C7 /* AddBollVCTL.h */,
+				CE1CCF591C71AABC003502C7 /* AddBollVCTL.m */,
+				CE1CCF5A1C71AABC003502C7 /* AddBollVCTL.xib */,
+				CE1CCF5D1C71CEFF003502C7 /* BollCollectionCell.h */,
+				CE1CCF5E1C71CEFF003502C7 /* BollCollectionCell.m */,
+				CE1CCF5F1C71CEFF003502C7 /* BollCollectionCell.xib */,
 			);
 			path = Lottery;
 			sourceTree = "<group>";
@@ -175,6 +191,8 @@
 				CE4996941C64684800CBBF8F /* LaunchScreen.storyboard in Resources */,
 				CE49969F1C6469D300CBBF8F /* BuyListVCTL.xib in Resources */,
 				CE4996911C64684800CBBF8F /* Assets.xcassets in Resources */,
+				CE1CCF611C71CEFF003502C7 /* BollCollectionCell.xib in Resources */,
+				CE1CCF5C1C71AABC003502C7 /* AddBollVCTL.xib in Resources */,
 				CE4996AC1C64701B00CBBF8F /* BollCell.xib in Resources */,
 				CE49968F1C64684800CBBF8F /* Main.storyboard in Resources */,
 			);
@@ -188,6 +206,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE49968C1C64684800CBBF8F /* ViewController.m in Sources */,
+				CE1CCF5B1C71AABC003502C7 /* AddBollVCTL.m in Sources */,
+				CE1CCF601C71CEFF003502C7 /* BollCollectionCell.m in Sources */,
 				CE4996AB1C64701B00CBBF8F /* BollCell.m in Sources */,
 				CE4996A31C6469E500CBBF8F /* ResultVCTL.m in Sources */,
 				CE49969E1C6469D300CBBF8F /* BuyListVCTL.m in Sources */,
