@@ -20,6 +20,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evN-2L-3au">
                                 <rect key="frame" x="278" y="193" width="45" height="30"/>
                                 <state key="normal" title="双色球"/>
+                                <connections>
+                                    <action selector="onShuangeSeQiu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mS9-Ft-ame"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xHP-U7-kyv">
                                 <rect key="frame" x="278" y="301" width="45" height="30"/>

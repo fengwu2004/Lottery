@@ -45,12 +45,36 @@
 
 - (UIView*)createRedBoll:(NSInteger)number index:(NSInteger)index {
 	
-	return nil;
+	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((_width + kOffset) * index, 2, _width, _width)];
+	
+	label.textAlignment = NSTextAlignmentCenter;
+	
+	[label setText:[NSString stringWithFormat:@"%d", (int)number]];
+	
+	label.layer.cornerRadius = 20;
+	
+	label.clipsToBounds = YES;
+	
+	label.backgroundColor = [UIColor redColor];
+	
+	return label;
 }
 
 - (UIView*)createBlueBoll:(NSInteger)number index:(NSInteger)index {
 	
-	return nil;
+	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((_width + kOffset) * index, 2, _width, _width)];
+	
+	label.layer.cornerRadius = 20;
+	
+	label.textAlignment = NSTextAlignmentCenter;
+	
+	label.backgroundColor = [UIColor blueColor];
+	
+	[label setText:[NSString stringWithFormat:@"%d", (int)number]];
+	
+	label.clipsToBounds = YES;
+	
+	return label;
 }
 
 - (void)initSubviews {
@@ -74,7 +98,7 @@
 		
 		NSInteger number = [blueBolls[i] integerValue];
 		
-		UIView *boll = [self createBlueBoll:number index:i];
+		UIView *boll = [self createBlueBoll:number index:i + redBolls.count];
 		
 		[self addSubview:boll];
 	}

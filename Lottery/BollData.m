@@ -10,4 +10,15 @@
 
 @implementation BollData
 
++ (BollData*)create:(NSArray*)reds blues:(NSArray*)blues {
+	
+	BollData *boll = [[BollData alloc] init];
+	
+	boll.redNumbers = reds;
+	
+	boll.blueNumbers = blues;
+	
+	return boll;
+}
+
 @end
