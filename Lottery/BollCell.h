@@ -12,6 +12,7 @@
 
 @interface BollCell : UITableViewCell
 
+@property (nonatomic, assign) BOOL showResult;
 @property (nonatomic, retain) BollData *bollData;
 
 @end

@@ -13,11 +13,11 @@
 //最多7个红球，2个蓝球
 
 #define kLeft 10
-#define kOffset 5
 
 @interface BollCell()
 
 @property (nonatomic, assign) CGFloat width;
+@property (nonatomic, assign) CGFloat offset;
 
 @end
 
@@ -27,7 +27,7 @@
    // Initialization code
 }
 
-- (void)setBollData:(BollData *)bollData {
+- (void)setBollData:(BollData *)bollData{
 	
 	_bollData = bollData;
 	
@@ -46,7 +46,7 @@
 
 - (UIView*)createRedBoll:(NSInteger)number index:(NSInteger)index {
 	
-	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((_width + kOffset) * index, 2, _width, _width)];
+	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(kLeft + (_width + _offset) * index, 0, _width, _width)];
 	
 	label.textAlignment = NSTextAlignmentCenter;
 	
@@ -58,12 +58,14 @@
 	
 	label.backgroundColor = [UIColor redColor];
 	
+	label.center = CGPointMake(label.center.x, self.bounds.size.height * 0.5);
+	
 	return label;
 }
 
 - (UIView*)createBlueBoll:(NSInteger)number index:(NSInteger)index {
 	
-	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((_width + kOffset) * index, 2, _width, _width)];
+	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(kLeft + (_width + _offset) * index, 0, _width, _width)];
 	
 	label.layer.cornerRadius = _width * 0.5;
 	
@@ -75,12 +77,25 @@
 	
 	label.clipsToBounds = YES;
 	
+	label.center = CGPointMake(label.center.x, self.bounds.size.height * 0.5);
+	
 	return label;
 }
 
 - (void)initSubviews {
 	
-	_width = ([self deviceWidth] - 60 - 8 * kOffset - 2 * kLeft)/9.0;
+	if (_showResult) {
+	
+		_offset = 10;
+		
+		_width = ([self deviceWidth] - 60 - 8 * _offset - 2 * kLeft)/9.0;
+	}
+	else {
+		
+		_offset = 15;
+		
+		_width = ([self deviceWidth] - 8 * _offset - 2 * kLeft)/9.0;
+	}
 	
 	NSArray *redBolls = [_bollData.redNumbers allObjects];
 	
@@ -104,13 +119,16 @@
 		[self addSubview:boll];
 	}
 	
-	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake([self deviceWidth] - 60, 2, 50, 40)];
-	
-	NSString *result = [[AwardChecking sharedInstance] resultString:_bollData];
-	
-	[label setText:result];
-	
-	[self addSubview:label];
+	if (_showResult) {
+		
+		UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake([self deviceWidth] - 80, 2, 60, 40)];
+		
+		NSString *result = [[AwardChecking sharedInstance] resultString:_bollData];
+		
+		[label setText:result];
+		
+		[self addSubview:label];
+	}
 }
 
 @end

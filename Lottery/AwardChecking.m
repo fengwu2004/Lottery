@@ -69,10 +69,10 @@ static AwardChecking *_instance;
 		case AwardResutl_Level6:
 			return @"六等奖";
 		case AwardResutl_None:
-			return @"没中奖";
+			return @" ";
 	}
 	
-	return @"没中奖";
+	return @" ";
 }
 
 + (AwardChecking*)sharedInstance {

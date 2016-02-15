@@ -107,18 +107,24 @@ typedef NS_ENUM(NSInteger, dataType){
 	
 	BollData *data;
 	
+	BollCell *cell = (BollCell *)[self cellByClassName:@"BollCell" inNib:@"BollCell" forTableView:tableView];
+	
 	if (indexPath.section == data_result) {
 		
 		data = [BollData create:@[@1, @2, @3, @4, @5, @6] blues:@[@33]];
+		
+		[cell setShowResult:NO];
 	}
 	else {
 		
 		data = _dataSource[indexPath.row];
+		
+		[cell setShowResult:YES];
 	}
 	
-	BollCell *cell = (BollCell *)[self cellByClassName:@"BollCell" inNib:@"BollCell" forTableView:tableView];
-	
 	[cell setBollData:data];
+	
+	cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	
 	return cell;
 }
