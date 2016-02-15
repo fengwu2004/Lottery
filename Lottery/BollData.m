@@ -14,9 +14,9 @@
 	
 	BollData *boll = [[BollData alloc] init];
 	
-	boll.redNumbers = reds;
+	boll.redNumbers = [NSSet setWithArray:reds];
 	
-	boll.blueNumbers = blues;
+	boll.blueNumbers = [NSSet setWithArray:blues];
 	
 	return boll;
 }

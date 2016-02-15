@@ -9,6 +9,7 @@
 #import "BuyListVCTL.h"
 #import "BollData.h"
 #import "BollCell.h"
+#import "AwardChecking.h"
 
 typedef NS_ENUM(NSInteger, dataType){
  
@@ -35,15 +36,15 @@ typedef NS_ENUM(NSInteger, dataType){
 	
 	_dataSource = [[NSMutableArray alloc] init];
 	
-	BollData *boll1 = [BollData create:@[@5, @8, @9, @5, @6, @7] blues:@[@32]];
+	BollData *boll1 = [BollData create:@[@5, @8, @9, @1, @6, @7] blues:@[@32]];
 	
-	BollData *boll2 = [BollData create:@[@5, @8, @9, @5, @6, @7] blues:@[@31]];
+	BollData *boll2 = [BollData create:@[@5, @8, @9, @1, @6, @7] blues:@[@31]];
 	
-	BollData *boll3 = [BollData create:@[@5, @8, @9, @5, @6, @7] blues:@[@33]];
+	BollData *boll3 = [BollData create:@[@5, @8, @9, @1, @6, @7] blues:@[@33]];
 	
-	BollData *boll4 = [BollData create:@[@5, @8, @9, @5, @6, @7] blues:@[@34]];
+	BollData *boll4 = [BollData create:@[@5, @8, @9, @1, @6, @7] blues:@[@34]];
 	
-	BollData *boll5 = [BollData create:@[@5, @8, @9, @5, @6, @7] blues:@[@35]];
+	BollData *boll5 = [BollData create:@[@5, @8, @9, @1, @6, @7] blues:@[@35]];
 	
 	[_dataSource addObject:boll1];
 	
@@ -54,6 +55,8 @@ typedef NS_ENUM(NSInteger, dataType){
 	[_dataSource addObject:boll4];
 	
 	[_dataSource addObject:boll5];
+	
+	[[AwardChecking sharedInstance] setWinningNumber:[BollData create:@[@1, @2, @3, @4, @5, @6] blues:@[@33]]];
 }
 
 - (void)viewDidLoad {

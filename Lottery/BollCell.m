@@ -8,6 +8,7 @@
 
 #import "BollCell.h"
 #import "BollData.h"
+#import "AwardChecking.h"
 
 //最多7个红球，2个蓝球
 
@@ -51,7 +52,7 @@
 	
 	[label setText:[NSString stringWithFormat:@"%d", (int)number]];
 	
-	label.layer.cornerRadius = 20;
+	label.layer.cornerRadius = _width * 0.5;
 	
 	label.clipsToBounds = YES;
 	
@@ -64,7 +65,7 @@
 	
 	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((_width + kOffset) * index, 2, _width, _width)];
 	
-	label.layer.cornerRadius = 20;
+	label.layer.cornerRadius = _width * 0.5;
 	
 	label.textAlignment = NSTextAlignmentCenter;
 	
@@ -79,9 +80,9 @@
 
 - (void)initSubviews {
 	
-	_width = ([self deviceWidth] - 8 * kOffset - 2 * kLeft)/9.0;
+	_width = ([self deviceWidth] - 60 - 8 * kOffset - 2 * kLeft)/9.0;
 	
-	NSArray *redBolls = _bollData.redNumbers;
+	NSArray *redBolls = [_bollData.redNumbers allObjects];
 	
 	for (NSInteger i = 0; i < redBolls.count; ++i) {
 		
@@ -92,7 +93,7 @@
 		[self addSubview:boll];
 	}
 	
-	NSArray *blueBolls = _bollData.blueNumbers;
+	NSArray *blueBolls = [_bollData.blueNumbers allObjects];
 	
 	for (NSInteger i = 0; i < blueBolls.count; ++i) {
 		
@@ -102,6 +103,14 @@
 		
 		[self addSubview:boll];
 	}
+	
+	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake([self deviceWidth] - 60, 2, 50, 40)];
+	
+	NSString *result = [[AwardChecking sharedInstance] resultString:_bollData];
+	
+	[label setText:result];
+	
+	[self addSubview:label];
 }
 
 @end
