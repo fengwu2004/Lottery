@@ -11,5 +11,6 @@
 @interface BollCollectionCell : UICollectionViewCell
 
 @property (nonatomic, assign) NSInteger number;
+@property (nonatomic, retain) UIColor *color;
 
 @end

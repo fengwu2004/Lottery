@@ -20,16 +20,34 @@
 	
 	[super awakeFromNib];
 	
-	self.layer.cornerRadius = 15;
+	self.layer.cornerRadius = 20;
 	
 	self.clipsToBounds = YES;
 	
-	self.backgroundColor = [UIColor redColor];
+	self.layer.borderColor = [_color CGColor];
+	
+	self.layer.borderWidth = 1;
+	
+	self.backgroundColor = [UIColor grayColor];
 }
 
 - (void)setNumber:(NSInteger)number {
 	
 	[_ibNum setText:[NSString stringWithFormat:@"%d", (int)number]];
+}
+
+- (void)setSelected:(BOOL)selected {
+	
+	[super setSelected:selected];
+
+	if (selected) {
+		
+		self.backgroundColor = _color;
+	}
+	else {
+		
+		self.backgroundColor = [UIColor grayColor];
+	}
 }
 
 @end

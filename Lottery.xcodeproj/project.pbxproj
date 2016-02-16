@@ -160,7 +160,7 @@
 				TargetAttributes = {
 					CE4996801C64684800CBBF8F = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = UKP869MHKN;
+						DevelopmentTeam = 6URA9L9CB5;
 					};
 				};
 			};
@@ -327,12 +327,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jianfei Chen (K5H3MEFEEM)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jianfei Chen (K5H3MEFEEM)";
 				INFOPLIST_FILE = Lottery/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruoogle.gamechat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ecba37cf-65f0-498d-b971-07ef0845ffcc";
+				PROVISIONING_PROFILE = "8a5ed57c-c3fd-451c-bd5d-2b54639ef892";
 			};
 			name = Debug;
 		};
@@ -340,13 +341,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jianfei Chen (K5H3MEFEEM)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Lottery/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruoogle.gamechat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ecba37cf-65f0-498d-b971-07ef0845ffcc";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

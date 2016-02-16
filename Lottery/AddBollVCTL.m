@@ -12,6 +12,9 @@
 @interface AddBollVCTL ()<UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic, retain) IBOutlet UICollectionView *ibRedCollection;
+@property (nonatomic, retain) IBOutlet UICollectionView *ibBlueCollection;
+@property (nonatomic, retain) NSMutableSet *redNumbers;
+@property (nonatomic, retain) NSMutableSet *blueNumbers;
 
 @end
 
@@ -35,7 +38,17 @@
 	
 	[_ibRedCollection registerNib:nib forCellWithReuseIdentifier:@"BollCollectionCell"];
 	
+	[_ibBlueCollection registerNib:nib forCellWithReuseIdentifier:@"BollCollectionCell"];
+	
+	_ibRedCollection.allowsMultipleSelection = YES;
+	
+	_ibBlueCollection.allowsMultipleSelection = YES;
+	
 	self.automaticallyAdjustsScrollViewInsets = NO;
+	
+	_redNumbers = [[NSMutableSet alloc] init];
+	
+	_blueNumbers = [[NSMutableSet alloc] init];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -45,7 +58,12 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 	
-	return 15;
+	if (_ibRedCollection == collectionView) {
+		
+		return 33;
+	}
+	
+	return 16;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -55,9 +73,49 @@
 	BollCollectionCell *cell = (BollCollectionCell *)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
 	
 	[cell setNumber:indexPath.row + 1];
+	
+	if (collectionView == _ibRedCollection) {
+		
+		[cell setColor:[UIColor redColor]];
+	}
+	else {
+		
+		[cell setColor:[UIColor blueColor]];
+	}
 
 	return cell;
 }
 
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+	
+	NSNumber *num = [NSNumber numberWithInteger:indexPath.row];
+	
+	if (collectionView == _ibRedCollection) {
+		
+		[_redNumbers removeObject:num];
+	}
+	else {
+
+		[_blueNumbers removeObject:num];
+	}
+	
+	return YES;
+}
+
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+	
+	NSNumber *num = [NSNumber numberWithInteger:indexPath.row];
+	
+	if (collectionView == _ibRedCollection) {
+		
+		[_redNumbers addObject:num];
+	}
+	else {
+		
+		[_blueNumbers addObject:num];
+	}
+	
+	return YES;
+}
 
 @end
