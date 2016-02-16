@@ -15,6 +15,8 @@
 @property (nonatomic, retain) IBOutlet UICollectionView *ibBlueCollection;
 @property (nonatomic, retain) NSMutableSet *redNumbers;
 @property (nonatomic, retain) NSMutableSet *blueNumbers;
+@property (nonatomic, retain) IBOutlet NSLayoutConstraint *ibRedHeight;
+@property (nonatomic, retain) IBOutlet NSLayoutConstraint *ibBlueHeight;
 
 @end
 
@@ -40,6 +42,8 @@
 	
 	[_ibBlueCollection registerNib:nib forCellWithReuseIdentifier:@"BollCollectionCell"];
 	
+	[self updateConstraint];
+	
 	_ibRedCollection.allowsMultipleSelection = YES;
 	
 	_ibBlueCollection.allowsMultipleSelection = YES;
@@ -49,6 +53,21 @@
 	_redNumbers = [[NSMutableSet alloc] init];
 	
 	_blueNumbers = [[NSMutableSet alloc] init];
+}
+
+- (void)updateConstraint {
+	
+	NSInteger redCol = ([self deviceWidth]- 10)/50;
+	
+	NSInteger redRow = ceil(33.0/redCol);
+	
+	_ibRedHeight.constant = 10 + redRow * 50;
+	
+	NSInteger blueCol = ([self deviceWidth]- 10)/50;
+	
+	NSInteger blueRow = ceil(33.0/blueCol);
+	
+	_ibBlueHeight.constant = 10 + blueRow * 50;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
