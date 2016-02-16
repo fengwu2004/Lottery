@@ -8,6 +8,7 @@
 
 #import "AddBollVCTL.h"
 #import "BollCollectionCell.h"
+#import "StoreMgr.h"
 
 @interface AddBollVCTL ()<UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -17,6 +18,7 @@
 @property (nonatomic, retain) NSMutableSet *blueNumbers;
 @property (nonatomic, retain) IBOutlet NSLayoutConstraint *ibRedHeight;
 @property (nonatomic, retain) IBOutlet NSLayoutConstraint *ibBlueHeight;
+@property (nonatomic, retain) UIBarButtonItem *rightBarItem;
 
 @end
 
@@ -53,6 +55,73 @@
 	_redNumbers = [[NSMutableSet alloc] init];
 	
 	_blueNumbers = [[NSMutableSet alloc] init];
+	
+	_rightBarItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"addnewitem"] style:UIBarButtonItemStylePlain target:self action:@selector(onNewBolls)];
+	
+	self.navigationItem.rightBarButtonItem = _rightBarItem;
+	
+	_rightBarItem.enabled = NO;
+}
+
+- (void)clearCurrentBolls {
+	
+	NSArray *reds = [_redNumbers allObjects];
+	
+	for (NSNumber *num in reds) {
+		
+		NSIndexPath *indexPath = [NSIndexPath indexPathForItem:[num integerValue] inSection:0];
+		
+		[_ibRedCollection deselectItemAtIndexPath:indexPath animated:NO];
+	}
+	
+	[_redNumbers removeAllObjects];
+	
+	NSArray *blues = [_blueNumbers allObjects];
+	
+	for (NSNumber *num in blues) {
+		
+		NSIndexPath *indexPath = [NSIndexPath indexPathForItem:[num integerValue] inSection:0];
+		
+		[_ibBlueCollection deselectItemAtIndexPath:indexPath animated:NO];
+	}
+	
+	[_blueNumbers removeAllObjects];
+	
+	_rightBarItem.enabled = NO;
+}
+
+- (void)saveToDB {
+	
+	NSMutableString *reds = [[NSMutableString alloc] init];
+	
+	[_redNumbers enumerateObjectsUsingBlock:^(id  _Nonnull obj, BOOL * _Nonnull stop) {
+		
+		NSNumber *num = (NSNumber *)obj;
+		
+		[reds appendString:num.stringValue];
+		
+		[reds appendString:@";"];
+	}];
+	
+	NSMutableString *blues = [[NSMutableString alloc] init];
+	
+	[_blueNumbers enumerateObjectsUsingBlock:^(id  _Nonnull obj, BOOL * _Nonnull stop) {
+		
+		NSNumber *num = (NSNumber *)obj;
+		
+		[blues appendString:num.stringValue];
+		
+		[blues appendString:@";"];
+	}];
+
+	[[StoreMgr sharedInstance] save:reds blues:blues];
+}
+
+- (void)onNewBolls {
+	
+	[self saveToDB];
+	
+	[self clearCurrentBolls];
 }
 
 - (void)updateConstraint {
@@ -118,6 +187,8 @@
 		[_blueNumbers removeObject:num];
 	}
 	
+	_rightBarItem.enabled = _redNumbers.count >= 6 && _blueNumbers.count >= 1;
+	
 	return YES;
 }
 
@@ -133,6 +204,8 @@
 		
 		[_blueNumbers addObject:num];
 	}
+	
+	_rightBarItem.enabled = _redNumbers.count >= 6 && _blueNumbers.count >= 1;
 	
 	return YES;
 }

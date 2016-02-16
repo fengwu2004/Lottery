@@ -25,6 +25,14 @@
 		CE4996A71C646D9700CBBF8F /* BollData.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4996A61C646D9700CBBF8F /* BollData.m */; };
 		CE4996AB1C64701B00CBBF8F /* BollCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4996A91C64701B00CBBF8F /* BollCell.m */; };
 		CE4996AC1C64701B00CBBF8F /* BollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4996AA1C64701B00CBBF8F /* BollCell.xib */; };
+		CECD828A1C73214200EAF9D0 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = CECD827F1C73214200EAF9D0 /* FMDatabase.m */; };
+		CECD828B1C73214200EAF9D0 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CECD82811C73214200EAF9D0 /* FMDatabaseAdditions.m */; };
+		CECD828C1C73214200EAF9D0 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = CECD82831C73214200EAF9D0 /* FMDatabasePool.m */; };
+		CECD828D1C73214200EAF9D0 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = CECD82851C73214200EAF9D0 /* FMDatabaseQueue.m */; };
+		CECD828E1C73214200EAF9D0 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = CECD82881C73214200EAF9D0 /* FMResultSet.m */; };
+		CECD828F1C73214200EAF9D0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CECD82891C73214200EAF9D0 /* Info.plist */; };
+		CECD82911C73221200EAF9D0 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CECD82901C73221200EAF9D0 /* libsqlite3.0.tbd */; };
+		CECD82941C73246400EAF9D0 /* StoreMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = CECD82931C73246400EAF9D0 /* StoreMgr.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +65,21 @@
 		CE4996A81C64701B00CBBF8F /* BollCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BollCell.h; sourceTree = "<group>"; };
 		CE4996A91C64701B00CBBF8F /* BollCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BollCell.m; sourceTree = "<group>"; };
 		CE4996AA1C64701B00CBBF8F /* BollCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BollCell.xib; sourceTree = "<group>"; };
+		CECD827E1C73214100EAF9D0 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		CECD827F1C73214200EAF9D0 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		CECD82801C73214200EAF9D0 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		CECD82811C73214200EAF9D0 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		CECD82821C73214200EAF9D0 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		CECD82831C73214200EAF9D0 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		CECD82841C73214200EAF9D0 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		CECD82851C73214200EAF9D0 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		CECD82861C73214200EAF9D0 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		CECD82871C73214200EAF9D0 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		CECD82881C73214200EAF9D0 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		CECD82891C73214200EAF9D0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CECD82901C73221200EAF9D0 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		CECD82921C73246400EAF9D0 /* StoreMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreMgr.h; path = ../StoreMgr.h; sourceTree = "<group>"; };
+		CECD82931C73246400EAF9D0 /* StoreMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreMgr.m; path = ../StoreMgr.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CECD82911C73221200EAF9D0 /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +97,7 @@
 		CE4996781C64684800CBBF8F = {
 			isa = PBXGroup;
 			children = (
+				CECD82901C73221200EAF9D0 /* libsqlite3.0.tbd */,
 				CE4996831C64684800CBBF8F /* Lottery */,
 				CE4996821C64684800CBBF8F /* Products */,
 			);
@@ -89,6 +114,7 @@
 		CE4996831C64684800CBBF8F /* Lottery */ = {
 			isa = PBXGroup;
 			children = (
+				CECD827D1C73214100EAF9D0 /* fmdb */,
 				CE4996871C64684800CBBF8F /* AppDelegate.h */,
 				CE4996881C64684800CBBF8F /* AppDelegate.m */,
 				CE49968A1C64684800CBBF8F /* ViewController.h */,
@@ -117,6 +143,8 @@
 				CE1CCF5D1C71CEFF003502C7 /* BollCollectionCell.h */,
 				CE1CCF5E1C71CEFF003502C7 /* BollCollectionCell.m */,
 				CE1CCF5F1C71CEFF003502C7 /* BollCollectionCell.xib */,
+				CECD82931C73246400EAF9D0 /* StoreMgr.m */,
+				CECD82921C73246400EAF9D0 /* StoreMgr.h */,
 			);
 			path = Lottery;
 			sourceTree = "<group>";
@@ -127,6 +155,25 @@
 				CE4996851C64684800CBBF8F /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CECD827D1C73214100EAF9D0 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				CECD827E1C73214100EAF9D0 /* FMDatabase.h */,
+				CECD827F1C73214200EAF9D0 /* FMDatabase.m */,
+				CECD82801C73214200EAF9D0 /* FMDatabaseAdditions.h */,
+				CECD82811C73214200EAF9D0 /* FMDatabaseAdditions.m */,
+				CECD82821C73214200EAF9D0 /* FMDatabasePool.h */,
+				CECD82831C73214200EAF9D0 /* FMDatabasePool.m */,
+				CECD82841C73214200EAF9D0 /* FMDatabaseQueue.h */,
+				CECD82851C73214200EAF9D0 /* FMDatabaseQueue.m */,
+				CECD82861C73214200EAF9D0 /* FMDB.h */,
+				CECD82871C73214200EAF9D0 /* FMResultSet.h */,
+				CECD82881C73214200EAF9D0 /* FMResultSet.m */,
+				CECD82891C73214200EAF9D0 /* Info.plist */,
+			);
+			path = fmdb;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +236,7 @@
 			files = (
 				CE4996A41C6469E500CBBF8F /* ResultVCTL.xib in Resources */,
 				CE4996941C64684800CBBF8F /* LaunchScreen.storyboard in Resources */,
+				CECD828F1C73214200EAF9D0 /* Info.plist in Resources */,
 				CE49969F1C6469D300CBBF8F /* BuyListVCTL.xib in Resources */,
 				CE4996911C64684800CBBF8F /* Assets.xcassets in Resources */,
 				CE1CCF611C71CEFF003502C7 /* BollCollectionCell.xib in Resources */,
@@ -207,14 +255,20 @@
 			files = (
 				CE49968C1C64684800CBBF8F /* ViewController.m in Sources */,
 				CE1CCF5B1C71AABC003502C7 /* AddBollVCTL.m in Sources */,
+				CECD828C1C73214200EAF9D0 /* FMDatabasePool.m in Sources */,
+				CECD828D1C73214200EAF9D0 /* FMDatabaseQueue.m in Sources */,
 				CE1CCF601C71CEFF003502C7 /* BollCollectionCell.m in Sources */,
 				CE4996AB1C64701B00CBBF8F /* BollCell.m in Sources */,
 				CE4996A31C6469E500CBBF8F /* ResultVCTL.m in Sources */,
 				CE49969E1C6469D300CBBF8F /* BuyListVCTL.m in Sources */,
+				CECD82941C73246400EAF9D0 /* StoreMgr.m in Sources */,
 				CE4996891C64684800CBBF8F /* AppDelegate.m in Sources */,
+				CECD828E1C73214200EAF9D0 /* FMResultSet.m in Sources */,
 				CE1CCF571C7184C1003502C7 /* AwardChecking.m in Sources */,
 				CE4996861C64684800CBBF8F /* main.m in Sources */,
+				CECD828A1C73214200EAF9D0 /* FMDatabase.m in Sources */,
 				CE4996A71C646D9700CBBF8F /* BollData.m in Sources */,
+				CECD828B1C73214200EAF9D0 /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
