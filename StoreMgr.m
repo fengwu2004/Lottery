@@ -44,6 +44,8 @@
 	
 	[_db open];
 	
+	[_db executeUpdate:@"CREATE TABLE Bolls (red text, blue integer)"];
+	
 	[_db class];
 	
 	return self;
@@ -56,8 +58,6 @@
 		return ;
 	}
 
-	[_db executeUpdate:@"CREATE TABLE Bolls (red text, blue integer)"];
-	
 	[_db executeUpdate:@"INSERT INTO Bolls (red, blue) VALUES (?,?)", reds, blues];
 	
 	[_db close];
@@ -72,7 +72,7 @@
 	
 	NSMutableArray* array = [[NSMutableArray alloc] init];
 	
-	FMResultSet *rs = [_db executeQuery:@"SELECT red, blue, FROM Bolls"];
+	FMResultSet *rs = [_db executeQuery:@"SELECT red, blue FROM Bolls"];
 	
 	while ([rs next]) {
 		

@@ -11,6 +11,7 @@
 #import "BollCell.h"
 #import "AwardChecking.h"
 #import "AddBollVCTL.h"
+#import "StoreMgr.h"
 
 
 typedef NS_ENUM(NSInteger, dataType){
@@ -31,32 +32,7 @@ typedef NS_ENUM(NSInteger, dataType){
 
 - (void)test {
 	
-	if (_dataSource) {
-		
-		return;
-	}
-	
-	_dataSource = [[NSMutableArray alloc] init];
-	
-	BollData *boll1 = [BollData create:@[@5, @8, @9, @1, @6, @7] blues:@[@32]];
-	
-	BollData *boll2 = [BollData create:@[@5, @8, @9, @1, @6, @7] blues:@[@31]];
-	
-	BollData *boll3 = [BollData create:@[@5, @8, @9, @1, @6, @7] blues:@[@33]];
-	
-	BollData *boll4 = [BollData create:@[@5, @8, @9, @1, @6, @7] blues:@[@34]];
-	
-	BollData *boll5 = [BollData create:@[@5, @8, @9, @1, @6, @7] blues:@[@35]];
-	
-	[_dataSource addObject:boll1];
-	
-	[_dataSource addObject:boll2];
-	
-	[_dataSource addObject:boll3];
-	
-	[_dataSource addObject:boll4];
-	
-	[_dataSource addObject:boll5];
+	_dataSource = [[StoreMgr sharedInstance] queryData];
 	
 	[[AwardChecking sharedInstance] setWinningNumber:[BollData create:@[@1, @2, @3, @4, @5, @6] blues:@[@33]]];
 }
@@ -68,6 +44,11 @@ typedef NS_ENUM(NSInteger, dataType){
 	UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"addnewitem"] style:UIBarButtonItemStylePlain target:self action:@selector(onNewBolls)];
 
 	self.navigationItem.rightBarButtonItem = rightItem;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+	
+	[super viewWillAppear:animated];
 	
 	[self test];
 }
