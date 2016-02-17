@@ -10,7 +10,7 @@
 
 @interface BollData : NSObject
 
-+ (BollData*)create:(NSArray*)reds blues:(NSArray*)blues;
++ (BollData*)create:(NSSet*)reds blues:(NSSet*)blues;
 
 @property (nonatomic, retain)NSSet *redNumbers;
 @property (nonatomic, retain)NSSet *blueNumbers;

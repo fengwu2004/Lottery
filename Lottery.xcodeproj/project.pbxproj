@@ -25,6 +25,7 @@
 		CE4996A71C646D9700CBBF8F /* BollData.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4996A61C646D9700CBBF8F /* BollData.m */; };
 		CE4996AB1C64701B00CBBF8F /* BollCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4996A91C64701B00CBBF8F /* BollCell.m */; };
 		CE4996AC1C64701B00CBBF8F /* BollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4996AA1C64701B00CBBF8F /* BollCell.xib */; };
+		CE87C2DA1C7424D50085CC4A /* BollDataMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = CE87C2D91C7424D50085CC4A /* BollDataMgr.m */; };
 		CECD828A1C73214200EAF9D0 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = CECD827F1C73214200EAF9D0 /* FMDatabase.m */; };
 		CECD828B1C73214200EAF9D0 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CECD82811C73214200EAF9D0 /* FMDatabaseAdditions.m */; };
 		CECD828C1C73214200EAF9D0 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = CECD82831C73214200EAF9D0 /* FMDatabasePool.m */; };
@@ -65,6 +66,8 @@
 		CE4996A81C64701B00CBBF8F /* BollCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BollCell.h; sourceTree = "<group>"; };
 		CE4996A91C64701B00CBBF8F /* BollCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BollCell.m; sourceTree = "<group>"; };
 		CE4996AA1C64701B00CBBF8F /* BollCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BollCell.xib; sourceTree = "<group>"; };
+		CE87C2D81C7424D50085CC4A /* BollDataMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BollDataMgr.h; sourceTree = "<group>"; };
+		CE87C2D91C7424D50085CC4A /* BollDataMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BollDataMgr.m; sourceTree = "<group>"; };
 		CECD827E1C73214100EAF9D0 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		CECD827F1C73214200EAF9D0 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
 		CECD82801C73214200EAF9D0 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
@@ -145,6 +148,8 @@
 				CE1CCF5F1C71CEFF003502C7 /* BollCollectionCell.xib */,
 				CECD82931C73246400EAF9D0 /* StoreMgr.m */,
 				CECD82921C73246400EAF9D0 /* StoreMgr.h */,
+				CE87C2D81C7424D50085CC4A /* BollDataMgr.h */,
+				CE87C2D91C7424D50085CC4A /* BollDataMgr.m */,
 			);
 			path = Lottery;
 			sourceTree = "<group>";
@@ -257,6 +262,7 @@
 				CE1CCF5B1C71AABC003502C7 /* AddBollVCTL.m in Sources */,
 				CECD828C1C73214200EAF9D0 /* FMDatabasePool.m in Sources */,
 				CECD828D1C73214200EAF9D0 /* FMDatabaseQueue.m in Sources */,
+				CE87C2DA1C7424D50085CC4A /* BollDataMgr.m in Sources */,
 				CE1CCF601C71CEFF003502C7 /* BollCollectionCell.m in Sources */,
 				CE4996AB1C64701B00CBBF8F /* BollCell.m in Sources */,
 				CE4996A31C6469E500CBBF8F /* ResultVCTL.m in Sources */,

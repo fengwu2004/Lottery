@@ -34,6 +34,8 @@
 
 - (id)init {
 	
+	self = [super init];
+	
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	
 	NSString *documentDirectory = [paths objectAtIndex:0];
@@ -84,7 +86,11 @@
 		
 		NSArray *blues = [blue componentsSeparatedByString:@";"];
 		
-		BollData *boll = [BollData create:reds blues:blues];
+		NSSet *redSet = [NSSet setWithArray:reds];
+		
+		NSSet *blueSet = [NSSet setWithArray:blues];
+		
+		BollData *boll = [BollData create:redSet blues:blueSet];
 		
 		[array addObject:boll];
 	}

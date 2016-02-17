@@ -34,7 +34,13 @@ typedef NS_ENUM(NSInteger, dataType){
 	
 	_dataSource = [[StoreMgr sharedInstance] queryData];
 	
-	[[AwardChecking sharedInstance] setWinningNumber:[BollData create:@[@1, @2, @3, @4, @5, @6] blues:@[@33]]];
+	NSSet *red = [NSSet setWithArray:@[@1, @2, @3, @4, @5, @6]];
+	
+	NSSet *blue = [NSSet setWithArray:@[@33]];
+	
+	[[AwardChecking sharedInstance] setWinningNumber:[BollData create:red blues:blue]];
+	
+	[_ibTableView reloadData];
 }
 
 - (void)viewDidLoad {
@@ -105,7 +111,11 @@ typedef NS_ENUM(NSInteger, dataType){
 	
 	if (indexPath.section == data_result) {
 		
-		data = [BollData create:@[@1, @2, @3, @4, @5, @6] blues:@[@33]];
+		NSSet *red = [NSSet setWithArray:@[@1, @2, @3, @4, @5, @6]];
+		
+		NSSet *blue = [NSSet setWithArray:@[@33]];
+		
+		data = [BollData create:red blues:blue];
 		
 		[cell setShowResult:NO];
 	}

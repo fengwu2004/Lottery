@@ -8,7 +8,8 @@
 
 #import "AddBollVCTL.h"
 #import "BollCollectionCell.h"
-#import "StoreMgr.h"
+#import "BollDataMgr.h"
+#import "BollData.h"
 
 @interface AddBollVCTL ()<UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -91,30 +92,10 @@
 }
 
 - (void)saveToDB {
-	
-	NSMutableString *reds = [[NSMutableString alloc] init];
-	
-	[_redNumbers enumerateObjectsUsingBlock:^(id  _Nonnull obj, BOOL * _Nonnull stop) {
-		
-		NSNumber *num = (NSNumber *)obj;
-		
-		[reds appendString:num.stringValue];
-		
-		[reds appendString:@";"];
-	}];
-	
-	NSMutableString *blues = [[NSMutableString alloc] init];
-	
-	[_blueNumbers enumerateObjectsUsingBlock:^(id  _Nonnull obj, BOOL * _Nonnull stop) {
-		
-		NSNumber *num = (NSNumber *)obj;
-		
-		[blues appendString:num.stringValue];
-		
-		[blues appendString:@";"];
-	}];
 
-	[[StoreMgr sharedInstance] save:reds blues:blues];
+	BollData *boll = [BollData create:_redNumbers blues:_blueNumbers];
+	
+	[[BollDataMgr sharedInstance] save:boll];
 }
 
 - (void)onNewBolls {

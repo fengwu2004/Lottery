@@ -10,13 +10,13 @@
 
 @implementation BollData
 
-+ (BollData*)create:(NSArray*)reds blues:(NSArray*)blues {
++ (BollData*)create:(NSSet*)reds blues:(NSSet*)blues {
 	
 	BollData *boll = [[BollData alloc] init];
 	
-	boll.redNumbers = [NSSet setWithArray:reds];
+	boll.redNumbers = [NSSet setWithSet:reds];
 	
-	boll.blueNumbers = [NSSet setWithArray:blues];
+	boll.blueNumbers = [NSSet setWithSet:blues];
 	
 	return boll;
 }
