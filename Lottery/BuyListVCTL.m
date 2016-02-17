@@ -12,7 +12,7 @@
 #import "AwardChecking.h"
 #import "AddBollVCTL.h"
 #import "StoreMgr.h"
-
+#import "HttpRequestManager.h"
 
 typedef NS_ENUM(NSInteger, dataType){
  
@@ -33,6 +33,15 @@ typedef NS_ENUM(NSInteger, dataType){
 - (void)test {
 	
 	_dataSource = [[StoreMgr sharedInstance] queryData];
+	
+	[[HttpRequestManager sharedInstance] post:@"http://127.0.0.1:3000/number" data:nil success:^(NSDictionary *data) {
+		
+		NSLog(@"%@", data);
+		
+	} failure:^(NSDictionary *data) {
+		
+		NSLog(@"error");
+	}];
 	
 	NSSet *red = [NSSet setWithArray:@[@1, @2, @3, @4, @5, @6]];
 	
