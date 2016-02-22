@@ -43,9 +43,9 @@ typedef NS_ENUM(NSInteger, dataType){
 //		NSLog(@"error");
 //	}];
 	
-	NSSet *red = [NSSet setWithArray:@[@6, @13, @16, @17, @23, @30]];
+	NSSet *red = [NSSet setWithArray:@[@"6", @"13", @"16", @"17", @"23", @"30"]];
 	
-	NSSet *blue = [NSSet setWithArray:@[@10]];
+	NSSet *blue = [NSSet setWithArray:@[@"10"]];
 	
 	[[AwardChecking sharedInstance] setWinningNumber:[BollData create:red blues:blue]];
 	

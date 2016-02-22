@@ -80,11 +80,11 @@
 		
 		NSString *red = [rs stringForColumn:@"red"];
 		
-		NSArray *reds = [red componentsSeparatedByString:@";"];
+		NSArray<__kindof NSString*> *reds = [red componentsSeparatedByString:@";"];
 		
 		NSString *blue = [rs stringForColumn:@"blue"];
 		
-		NSArray *blues = [blue componentsSeparatedByString:@";"];
+		NSArray<__kindof NSString*> *blues = [blue componentsSeparatedByString:@";"];
 		
 		NSSet *redSet = [NSSet setWithArray:reds];
 		

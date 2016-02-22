@@ -157,7 +157,7 @@
 
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
 	
-	NSNumber *num = [NSNumber numberWithInteger:indexPath.row + 1];
+	NSString *num = [NSString stringWithFormat:@"%ld", indexPath.row + 1];
 	
 	NSLog(@"%d", (int)(indexPath.row));
 	
@@ -177,7 +177,7 @@
 
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 	
-	NSNumber *num = [NSNumber numberWithInteger:indexPath.row + 1];
+	NSString *num = [NSString stringWithFormat:@"%ld", indexPath.row + 1];
 	
 	NSLog(@"%d", (int)(indexPath.row));
 	
