@@ -45,6 +45,11 @@ static AwardChecking *_instance;
 	
 	if (redNumbers.count + blueNumbers.count == 4) {
 		
+		return AwardResutl_Level5;
+	}
+	
+	if (blueNumbers.count == 1) {
+		
 		return AwardResutl_Level6;
 	}
 	

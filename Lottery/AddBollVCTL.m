@@ -70,7 +70,7 @@
 	
 	for (NSNumber *num in reds) {
 		
-		NSIndexPath *indexPath = [NSIndexPath indexPathForItem:[num integerValue] inSection:0];
+		NSIndexPath *indexPath = [NSIndexPath indexPathForItem:[num integerValue] - 1 inSection:0];
 		
 		[_ibRedCollection deselectItemAtIndexPath:indexPath animated:NO];
 	}
@@ -81,7 +81,7 @@
 	
 	for (NSNumber *num in blues) {
 		
-		NSIndexPath *indexPath = [NSIndexPath indexPathForItem:[num integerValue] inSection:0];
+		NSIndexPath *indexPath = [NSIndexPath indexPathForItem:[num integerValue]- 1 inSection:0];
 		
 		[_ibBlueCollection deselectItemAtIndexPath:indexPath animated:NO];
 	}
@@ -157,7 +157,9 @@
 
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
 	
-	NSNumber *num = [NSNumber numberWithInteger:indexPath.row];
+	NSNumber *num = [NSNumber numberWithInteger:indexPath.row + 1];
+	
+	NSLog(@"%d", (int)(indexPath.row));
 	
 	if (collectionView == _ibRedCollection) {
 		
@@ -175,7 +177,9 @@
 
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 	
-	NSNumber *num = [NSNumber numberWithInteger:indexPath.row];
+	NSNumber *num = [NSNumber numberWithInteger:indexPath.row + 1];
+	
+	NSLog(@"%d", (int)(indexPath.row));
 	
 	if (collectionView == _ibRedCollection) {
 		

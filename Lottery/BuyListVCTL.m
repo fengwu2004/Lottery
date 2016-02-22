@@ -11,7 +11,7 @@
 #import "BollCell.h"
 #import "AwardChecking.h"
 #import "AddBollVCTL.h"
-#import "StoreMgr.h"
+#import "BollDataMgr.h"
 #import "HttpRequestManager.h"
 
 typedef NS_ENUM(NSInteger, dataType){
@@ -32,20 +32,20 @@ typedef NS_ENUM(NSInteger, dataType){
 
 - (void)test {
 	
-	_dataSource = [[StoreMgr sharedInstance] queryData];
+	_dataSource = [[BollDataMgr sharedInstance] bollsList];
 	
-	[[HttpRequestManager sharedInstance] post:@"http://127.0.0.1:3000/number" data:nil success:^(NSDictionary *data) {
-		
-		NSLog(@"%@", data);
-		
-	} failure:^(NSDictionary *data) {
-		
-		NSLog(@"error");
-	}];
+//	[[HttpRequestManager sharedInstance] post:@"http://127.0.0.1:3000/number" data:nil success:^(NSDictionary *data) {
+//		
+//		NSLog(@"%@", data);
+//		
+//	} failure:^(NSDictionary *data) {
+//		
+//		NSLog(@"error");
+//	}];
 	
-	NSSet *red = [NSSet setWithArray:@[@1, @2, @3, @4, @5, @6]];
+	NSSet *red = [NSSet setWithArray:@[@6, @13, @16, @17, @23, @30]];
 	
-	NSSet *blue = [NSSet setWithArray:@[@33]];
+	NSSet *blue = [NSSet setWithArray:@[@10]];
 	
 	[[AwardChecking sharedInstance] setWinningNumber:[BollData create:red blues:blue]];
 	
@@ -120,11 +120,7 @@ typedef NS_ENUM(NSInteger, dataType){
 	
 	if (indexPath.section == data_result) {
 		
-		NSSet *red = [NSSet setWithArray:@[@1, @2, @3, @4, @5, @6]];
-		
-		NSSet *blue = [NSSet setWithArray:@[@33]];
-		
-		data = [BollData create:red blues:blue];
+		data = [AwardChecking sharedInstance].winningNumber;
 		
 		[cell setShowResult:NO];
 	}

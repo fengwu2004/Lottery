@@ -55,6 +55,10 @@
 		[reds appendString:@";"];
 	}];
 	
+	NSInteger maxIndex = MAX(0, ([reds length] - 1));
+	
+	NSString *redsStr = [reds substringToIndex:maxIndex];
+	
 	NSMutableString *blues = [[NSMutableString alloc] init];
 	
 	[boll.blueNumbers enumerateObjectsUsingBlock:^(id  _Nonnull obj, BOOL * _Nonnull stop) {
@@ -66,7 +70,11 @@
 		[blues appendString:@";"];
 	}];
 	
-	[[StoreMgr sharedInstance] save:reds blues:blues];
+	maxIndex = MAX(0, ([blues length] - 1));
+	
+	NSString *bluesStr = [blues substringToIndex:maxIndex];
+	
+	[[StoreMgr sharedInstance] save:redsStr blues:bluesStr];
 }
 
 @end
