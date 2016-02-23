@@ -34,15 +34,6 @@ typedef NS_ENUM(NSInteger, dataType){
 	
 	_dataSource = [[BollDataMgr sharedInstance] bollsList];
 	
-//	[[HttpRequestManager sharedInstance] post:@"http://127.0.0.1:3000/number" data:nil success:^(NSDictionary *data) {
-//		
-//		NSLog(@"%@", data);
-//		
-//	} failure:^(NSDictionary *data) {
-//		
-//		NSLog(@"error");
-//	}];
-	
 	NSSet *red = [NSSet setWithArray:@[@"6", @"13", @"16", @"17", @"23", @"30"]];
 	
 	NSSet *blue = [NSSet setWithArray:@[@"10"]];
@@ -50,6 +41,20 @@ typedef NS_ENUM(NSInteger, dataType){
 	[[AwardChecking sharedInstance] setWinningNumber:[BollData create:red blues:blue]];
 	
 	[_ibTableView reloadData];
+}
+
+- (void)serverCallWinNumber {
+	
+	NSDictionary *dic = [NSDictionary dictionary];
+	
+	[[HttpRequestManager sharedInstance] post:@"http://139.196.164.114:3000/numbers" data:dic success:^(NSDictionary *data) {
+		
+		NSLog(@"%@---------------", data);
+		
+	} failure:^(NSDictionary *data) {
+		
+		NSLog(@"error http session");
+	}];
 }
 
 - (void)viewDidLoad {

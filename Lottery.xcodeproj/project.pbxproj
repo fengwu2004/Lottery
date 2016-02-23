@@ -445,7 +445,7 @@
 					"$(PROJECT_DIR)/Lottery",
 				);
 				INFOPLIST_FILE = Lottery/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruoogle.gamechat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -465,7 +465,7 @@
 					"$(PROJECT_DIR)/Lottery",
 				);
 				INFOPLIST_FILE = Lottery/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ruoogle.gamechat;
 				PRODUCT_NAME = "$(TARGET_NAME)";

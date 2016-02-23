@@ -11,7 +11,6 @@
 
 @interface HttpRequestManager()
 
-@property (nonatomic, retain) AFHTTPSessionManager *httpSession;
 @end
 
 @implementation HttpRequestManager
@@ -30,18 +29,21 @@
 	return _instance;
 }
 
-- (id)init {
+- (void)get:(NSString*)url data:(NSDictionary*)data success:(void(^)(NSDictionary* data))success failure:(void(^)(NSDictionary* data))failure {
 	
-	self = [super init];
-	
-	_httpSession = [[AFHTTPSessionManager alloc] init];
-	
-	return self;
+	[[AFHTTPSessionManager manager] GET:url parameters:data success:^(NSURLSessionDataTask * task, id responseObject) {
+		
+		success(responseObject);
+		
+	} failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+		
+		failure(nil);
+	}];
 }
 
 - (void)post:(NSString*)url data:(NSDictionary*)data success:(void(^)(NSDictionary* data))success failure:(void(^)(NSDictionary* data))failure {
 
-	[_httpSession POST:url parameters:data success:^(NSURLSessionDataTask * task, id responseObject) {
+	[[AFHTTPSessionManager manager] POST:url parameters:data success:^(NSURLSessionDataTask * task, id responseObject) {
 		
 		success(responseObject);
 		
